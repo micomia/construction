@@ -1,0 +1,15 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "moduleResolution": "node",
+    "types": ["node"],          // ルートをプロジェクト直下に
+    "paths": {
+      "@/*": ["src/*"]       // "@/components/..." 形式を有効化
+    }
+  }
+}
