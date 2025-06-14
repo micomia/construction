@@ -47,7 +47,7 @@ interface FormState {
 }
 
 // -----------------  初期値 ----------------------
-const blankSide: SideDims = { width: "", gl: "0", eave: "" };
+const blankSide: SideDims = { width: "", gl: "", eave: "" };
 const initState: FormState = {
   scaffoldType: "本足場",
   pitchType: "A",
@@ -292,43 +292,55 @@ export default function ScaffoldEstimator() {
       <div className="overflow-x-auto">
         <h2 className="text-lg font-semibold mb-2 text-gray-900">材料数量</h2>
         <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead className="text-gray-900">部材</TableHead>
+              <TableHead className="text-gray-900">数量</TableHead>
+            </TableRow>
+          </TableHeader>
           <TableBody>
             <TableRow>
-              <TableCell className="text-gray-900">
-                支柱：{result.posts}
-              </TableCell>
+              <TableCell className="text-gray-900">支柱</TableCell>
+              <TableCell className="text-gray-900">{result.posts}</TableCell>
             </TableRow>
             <TableRow>
-              <TableCell className="text-gray-900">
-                外側手すり：{result.outerRails}
-              </TableCell>
+              <TableCell className="text-gray-900">外側手すり</TableCell>
+              <TableCell className="text-gray-900">{result.outerRails}</TableCell>
             </TableRow>
             <TableRow>
-              <TableCell className="text-gray-900">
-                内側手すり：{result.innerRails}
-              </TableCell>
+              <TableCell className="text-gray-900">内側手すり</TableCell>
+              <TableCell className="text-gray-900">{result.innerRails}</TableCell>
             </TableRow>
             <TableRow>
-              <TableCell className="text-gray-900">
-                落下防止材：{result.fallBars}
-              </TableCell>
+              <TableCell className="text-gray-900">落下防止材</TableCell>
+              <TableCell className="text-gray-900">{result.fallBars}</TableCell>
             </TableRow>
           </TableBody>
         </Table>
         <h2 className="text-lg font-semibold mt-6 mb-2 text-gray-900">ジャッキ高さ (mm)</h2>
         <Table>
+          <TableHeader>
+            <TableRow>
+              <TableHead className="text-gray-900">面</TableHead>
+              <TableHead className="text-gray-900">推奨ジャッキ</TableHead>
+            </TableRow>
+          </TableHeader>
           <TableBody>
             <TableRow>
-              <TableCell className="text-gray-900">南：{result.jack.south}</TableCell>
+              <TableCell className="text-gray-900">南</TableCell>
+              <TableCell className="text-gray-900">{result.jack.south}</TableCell>
             </TableRow>
             <TableRow>
-              <TableCell className="text-gray-900">東：{result.jack.east}</TableCell>
+              <TableCell className="text-gray-900">東</TableCell>
+              <TableCell className="text-gray-900">{result.jack.east}</TableCell>
             </TableRow>
             <TableRow>
-              <TableCell className="text-gray-900">北：{result.jack.north}</TableCell>
+              <TableCell className="text-gray-900">北</TableCell>
+              <TableCell className="text-gray-900">{result.jack.north}</TableCell>
             </TableRow>
             <TableRow>
-              <TableCell className="text-gray-900">西：{result.jack.west}</TableCell>
+              <TableCell className="text-gray-900">西</TableCell>
+              <TableCell className="text-gray-900">{result.jack.west}</TableCell>
             </TableRow>
           </TableBody>
         </Table>
