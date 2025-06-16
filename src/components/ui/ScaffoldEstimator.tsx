@@ -47,7 +47,7 @@ interface FormState {
 }
 
 // -----------------  初期値 ----------------------
-const blankSide: SideDims = { width: "", gl: "0", eave: "" };
+const blankSide: SideDims = { width: "", gl: "", eave: "" };
 const initState: FormState = {
   scaffoldType: "本足場",
   pitchType: "A",
