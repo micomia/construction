@@ -2,6 +2,10 @@
 
 このリポジトリは、React と TypeScript を Vite 上で動かすための最小テンプレートです。HMR (Hot Module Replacement) が有効になっており、基本的な ESLint 設定も含まれています。
 
+## はじめに
+
+このプロジェクトは React と TypeScript を利用した Web アプリケーション開発のスターターテンプレートです。新しくアサインされた開発者は、下記の手順で環境を構築し、作業の進捗やメモを `dev_log.md` に記録してください。
+
 ## 開発用サーバーの起動
 ```bash
 npm install
