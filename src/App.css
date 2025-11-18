@@ -1,42 +1,226 @@
+:root {
+  font-family: 'Noto Sans JP', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #0f172a;
+  background-color: #f4f6fb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #f4f6fb;
+}
+
 #root {
-  max-width: 1280px;
+  min-height: 100vh;
+}
+
+.page {
+  max-width: 920px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 48px 20px 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.header {
+  background: linear-gradient(135deg, #e0f2ff, #f8f1ff);
+  border-radius: 24px;
+  padding: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.12);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.section-label {
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  color: #6b7280;
+  margin: 0 0 4px;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  font-size: 32px;
+}
+
+.subtitle {
+  margin: 8px 0 0;
+  color: #4b5563;
+}
+
+.avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 32px;
+  object-fit: cover;
+  border: 4px solid #fff;
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.2);
+}
+
+.panel {
+  background: #fff;
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 15px 30px rgba(15, 23, 42, 0.08);
+}
+
+.panel h2 {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+.panel dl {
+  margin: 16px 0 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.panel dl div {
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.panel dt {
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 6px;
+}
+
+.panel dd {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.actions .action-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.action-item {
+  border: none;
+  border-radius: 16px;
+  padding: 18px 22px;
+  background: #f1f5f9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 200ms, box-shadow 200ms;
+  font: inherit;
+}
+
+.action-item span {
+  font-size: 28px;
+  color: #94a3b8;
+}
+
+.action-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.action-description {
+  margin: 4px 0 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.action-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+}
+
+.action-item.danger {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+}
+
+.action-item.danger .action-title {
+  color: #dc2626;
+}
+
+.feedback {
+  margin: 0;
+  padding: 16px 20px;
+  background: #ecfdf5;
+  border-radius: 16px;
+  border: 1px solid #a7f3d0;
+  color: #065f46;
+}
+
+.dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.dialog {
+  width: min(420px, 100%);
+  background: #fff;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.2);
+}
+
+.dialog h3 {
+  margin-top: 0;
+  font-size: 22px;
+}
+
+.dialog p {
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.dialog-actions {
+  margin-top: 32px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.dialog button {
+  font: inherit;
+  border-radius: 999px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+}
+
+.dialog button.secondary {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+.dialog button.primary {
+  background: #2563eb;
+  color: #fff;
+}
+
+@media (max-width: 640px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .panel dl {
+    grid-template-columns: 1fr;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
